@@ -1,0 +1,22 @@
+#pragma once
+
+#define SUPER_SCANNER_DEVICE 0x8080
+#define IOCTL_SUPERSHAREDMEMORY_SHARE_MEM CTL_CODE(SUPER_SCANNER_DEVICE, 0x800, METHOD_BUFFERED, FILE_ANY_ACCESS)
+#define IOCTL_SUPERSHAREDMEMORY_UNSHARE_MEM CTL_CODE(SUPER_SCANNER_DEVICE, 0x801, METHOD_BUFFERED, FILE_ANY_ACCESS)
+
+#define SUPER_SCANNER_MAX_PATH 260
+
+#define DRIVER_TAG 'YEP'
+#define DRIVER_NAME L"SuperSharedMemory"
+
+
+struct SuperSharedMemoryShareMemoryAddress {
+	PVOID pid;
+	PVOID remoteAddress;
+	PVOID localAddress;
+	unsigned int size;
+};
+
+
+
+
